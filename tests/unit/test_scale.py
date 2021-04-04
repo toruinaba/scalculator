@@ -1,89 +1,75 @@
 import scalculator.scale as scale
-from scalculator.material import Note, Interval
+from scalculator.material import Note_name, Interval
 
-class Test_diatonic_major_scale:
-    def test_scale(self):
+class Test_scale:
+    def test_diatonic_major(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Diatonic_major_scale(key).note
-        expected = [Note.C, Note.D, Note.E, Note.F, Note.G, Note.A, Note.B]
+        actual = scale.Diatonic_major(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.E, Note_name.F, Note_name.G, Note_name.A, Note_name.B]
         # assert
         assert expected == actual
 
-
-class Test_natural_minor_scale:
-    def test_scale(self):
+    def test_natural_minor(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Natural_minor_scale(key).note
-        expected = [Note.C, Note.D, Note.Ef, Note.F, Note.G, Note.Af, Note.Bf]
+        actual = scale.Natural_minor(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.Ef, Note_name.F, Note_name.G, Note_name.Af, Note_name.Bf]
         # assert
         assert expected == actual
 
-
-class Test_harmonic_minor_scale:
-    def test_scale(self):
+    def test_harmonic_minor(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Harmonic_minor_scale(key).note
-        expected = [Note.C, Note.D, Note.Ef, Note.F, Note.G, Note.Af, Note.B]
+        actual = scale.Harmonic_minor(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.Ef, Note_name.F, Note_name.G, Note_name.Af, Note_name.B]
         # assert
         assert expected == actual
 
-
-class Test_Dorian_scale:
-    def test_scale(self):
+    def test_dorian(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Dorian_scale(key).note
-        expected = [Note.C, Note.D, Note.Ef, Note.F, Note.G, Note.A, Note.Bf]
+        actual = scale.Dorian(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.Ef, Note_name.F, Note_name.G, Note_name.A, Note_name.Bf]
         # assert
         assert expected == actual
 
-
-class Test_Phrygian_scale:
-    def test_scale(self):
+    def test_phrygian(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Phrygian_scale(key).note
-        expected = [Note.C, Note.Cs, Note.Ef, Note.F, Note.G, Note.Af, Note.Bf]
+        actual = scale.Phrygian(key).note
+        expected = [Note_name.C, Note_name.Cs, Note_name.Ef, Note_name.F, Note_name.G, Note_name.Af, Note_name.Bf]
         # assert
         assert expected == actual
 
-
-class Test_Lydian_scale:
-    def test_scale(self):
+    def test_lydian(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Lydian_scale(key).note
-        expected = [Note.C, Note.D, Note.E, Note.Fs, Note.G, Note.A, Note.B]
+        actual = scale.Lydian(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.E, Note_name.Fs, Note_name.G, Note_name.A, Note_name.B]
         # assert
         assert expected == actual
 
-
-class Test_Mixolydian_scale:
-    def test_scale(self):
+    def test_mixolydian(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Mixolydian_scale(key).note
-        expected = [Note.C, Note.D, Note.E, Note.F, Note.G, Note.A, Note.Bf]
+        actual = scale.Mixolydian(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.E, Note_name.F, Note_name.G, Note_name.A, Note_name.Bf]
         # assert
         assert expected == actual
 
-
-class Test_Locrian_scale:
-    def test_scale(self):
+    def test_locrian(self):
         # arrange
-        key = Note.C
+        key = Note_name.C
         # act
-        actual = scale.Locrian_scale(key).note
-        expected = [Note.C, Note.D, Note.Ef, Note.F, Note.Fs, Note.Af, Note.Bf]
+        actual = scale.Locrian(key).note
+        expected = [Note_name.C, Note_name.D, Note_name.Ef, Note_name.F, Note_name.Fs, Note_name.Af, Note_name.Bf]
         # assert
         assert expected == actual

@@ -1,17 +1,17 @@
-from scalculator.material import Note, Interval
+from scalculator.material import Note_name, Interval
 
 class Test_note:
     def test_note_add1(self):
-        expected = Note.Cs
-        assert expected == Note.C + Interval._f9th
+        expected = Note_name.Cs
+        assert expected == Note_name.C + Interval._f9th
     
     def test_note_sub1(self):
-        expected = Note.D
-        assert expected == Note.C - Interval._m7th
+        expected = Note_name.D
+        assert expected == Note_name.C - Interval._m7th
     
     def test_note_sub2(self):
         expected = Interval._m7th
-        assert expected == Note.C - Note.D
+        assert expected == Note_name.C - Note_name.D
 
 class Test_interval:
     def test_interval_add1(self):

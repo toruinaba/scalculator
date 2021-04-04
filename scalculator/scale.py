@@ -1,21 +1,8 @@
 from abc import ABC, abstractclassmethod
-from .material import Interval, Note
-
-class Scale_base:
-    intervals = ()
-
-    def __init__(self, note: Note):
-        self.key = note
-
-    def from_str(cls):
-        pass
-
-    @property
-    def note(self):
-        return [self.key + x for x in self.intervals]
+from .material import Interval, Note_name, Notes_base
 
 
-class Diatonic_major_scale(Scale_base):
+class Diatonic_major(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -26,11 +13,11 @@ class Diatonic_major_scale(Scale_base):
         Interval._M7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
 
 
-class Natural_minor_scale(Scale_base):
+class Natural_minor(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -41,11 +28,11 @@ class Natural_minor_scale(Scale_base):
         Interval._m7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
 
 
-class Harmonic_minor_scale(Scale_base):
+class Harmonic_minor(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -56,16 +43,16 @@ class Harmonic_minor_scale(Scale_base):
         Interval._M7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
 
 
-class Ionian_scale(Diatonic_major_scale):
-    def __init__(self, note: Note):
-        super().__init__(note)
+class Ionian(Diatonic_major):
+    def __init__(self, note: Note_name):
+        super().__init__(Note_name)
     
 
-class Dorian_scale(Scale_base):
+class Dorian(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -76,11 +63,11 @@ class Dorian_scale(Scale_base):
         Interval._m7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
     
 
-class Phrygian_scale(Scale_base):
+class Phrygian(Notes_base):
     intervals = (
         Interval._R,
         Interval._f9th,
@@ -91,11 +78,11 @@ class Phrygian_scale(Scale_base):
         Interval._m7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
 
 
-class Lydian_scale(Scale_base):
+class Lydian(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -106,11 +93,11 @@ class Lydian_scale(Scale_base):
         Interval._M7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
 
 
-class Mixolydian_scale(Scale_base):
+class Mixolydian(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -121,16 +108,16 @@ class Mixolydian_scale(Scale_base):
         Interval._m7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
     
 
-class Aeolian_scale(Natural_minor_scale):
-    def __init__(self):
+class Aeolian(Natural_minor):
+    def __init__(self, note: Note_name):
         super().__init__(note)
 
 
-class Locrian_scale(Scale_base):
+class Locrian(Notes_base):
     intervals = (
         Interval._R,
         Interval._9th,
@@ -141,6 +128,6 @@ class Locrian_scale(Scale_base):
         Interval._m7th
     )
 
-    def __init__(self, note: Note):
+    def __init__(self, note: Note_name):
         super().__init__(note)
     
